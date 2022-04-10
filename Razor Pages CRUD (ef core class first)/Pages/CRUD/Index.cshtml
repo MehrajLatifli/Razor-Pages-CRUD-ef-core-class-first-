@@ -1,0 +1,92 @@
+﻿@page
+@model Razor_Pages_CRUD__ef_core_class_first_.Pages.CRUD.IndexModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+     <link rel="stylesheet"  href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+    <title>Razor Pages CRUD (EF Core class first)</title>
+</head>
+<body>
+
+<table class="table table-hover table-success">
+  <thead>
+    <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Worker[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Worker[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Worker[0].Surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Worker[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Worker[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Worker[0].Salary)
+            </th>
+            <th>
+               
+                  <a asp-page="Create" class="btn btn-success">Create New</a>
+           
+            </th>
+
+            <th >
+                 <form method="get">
+
+                   <label >Search:</label>
+                   <input asp-for=search/>
+                   <button type="submit" class="btn btn-info" style="color:white">Submit</button>
+ 
+                 </form>
+            </th>
+    </tr>
+  </thead>
+  <tbody>
+        @foreach (var item in Model.Worker) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                <a asp-page="Edit" class="btn btn-warning" asp-route-id="@item.Id">Edit</a> 
+                <a asp-page="Details" class="btn btn-primary" asp-route-id="@item.Id">Details</a> 
+                <a asp-page="Delete" class="btn btn-danger" asp-route-id="@item.Id">Delete</a>
+            </td>
+            <td>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+</body>
+</html>
