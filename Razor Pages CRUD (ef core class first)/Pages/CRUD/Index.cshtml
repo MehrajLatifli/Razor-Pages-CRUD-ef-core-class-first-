@@ -11,6 +11,8 @@
 <head>
     <meta name="viewport" content="width=device-width" />
      <link rel="stylesheet"  href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+     <script src="~/lib/jquery/dist/jquery.js"></script>
+     <script src="~/js/site.js"></script>
     <title>Razor Pages CRUD (EF Core class first)</title>
 </head>
 <body>
@@ -18,22 +20,22 @@
 <table class="table table-hover table-success">
   <thead>
     <tr>
-            <th>
+            <th style="cursor:pointer">
                 @Html.DisplayNameFor(model => model.Worker[0].Id)
             </th>
-            <th>
+            <th style="cursor:pointer">
                 @Html.DisplayNameFor(model => model.Worker[0].Name)
             </th>
-            <th>
+            <th style="cursor:pointer">
                 @Html.DisplayNameFor(model => model.Worker[0].Surname)
             </th>
-            <th>
+            <th style="cursor:pointer">
                 @Html.DisplayNameFor(model => model.Worker[0].Age)
             </th>
-            <th>
+            <th style="cursor:pointer">
                 @Html.DisplayNameFor(model => model.Worker[0].Address)
             </th>
-            <th>
+            <th style="cursor:pointer">
                 @Html.DisplayNameFor(model => model.Worker[0].Salary)
             </th>
             <th>
